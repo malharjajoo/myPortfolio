@@ -1,0 +1,420 @@
+<!DOCTYPE HTML>
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>LLVM Compiler</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<div class="logo container">
+						<div>
+							<h1><a href="index.html" id="logo">LLVM Compiler</a></h1>
+							
+						</div>
+					</div>
+				</header>
+
+			<!-- Navbar -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<a class="current" href="#">Projects</a>
+							<ul>
+								<li><a href="#">Cache simulator</a></li>
+								<li><a href="#">MIPS CPU simulator</a></li>
+                                 <li><a href="#">LLVM Compiler</a></li>
+                                <li><a href="Robotics.html">Robotics Group Project</a></li>
+								<li>
+									<a href="#"> fill this if needed </a>
+									<ul>
+										<li><a href="#">part 1</a></li>
+										<li><a href="#">part 2</a></li>
+										<li><a href="#">part 3</a></li>
+										<li><a href="#">part 4</a></li>
+									</ul>
+								</li>
+								
+							</ul>
+						</li>
+                        
+						<li><a href="AboutMe.html">About</a></li>
+                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+						
+					</ul>
+				</nav>
+
+				
+
+			<!-- Main -->
+				<div id="main-wrapper">
+					<div id="main" class="container">
+						<div class="row">
+							<div class="3u 12u(mobile)">
+								<div class="sidebar">
+
+									<!-- Sidebar -->
+
+										<!--Useful links -->
+											<section>
+												<h2 class="major"><span>Useful links</span></h2>
+												<ul class="divided">
+													<li>
+														<article class="box post-summary">
+															<h3>A Good Overview</h3>
+															<ul class="meta">
+																<a href="http://llvm.org/docs/" style="text-decoration:none">Overview</a>
+                                                               
+															</ul>
+                                                            <ul class="meta">
+                                                                 <a href="http://llvm.org/docs/" style="text-decoration:none">Getting Started</a>
+                                                            </ul>
+														</article>
+													</li>
+													<li>
+														<article class="box post-summary">
+															<h3>Excellent Resources</h3>
+															<ul class="meta">
+																<a href="http://nptel.ac.in/courses/106108052/6" style="text-decoration:none">Compiler Design</a>
+															</ul>
+														</article>
+													</li>
+													<li>
+														<article class="box post-summary">
+															<h3><a href="#">And Another</a></h3>
+															<ul class="meta">
+																<li class="icon fa-clock-o">Yesterday</li>
+																<li class="icon fa-comments"><a href="#">184</a></li>
+															</ul>
+														</article>
+													</li>
+												</ul>
+												<a href="#" class="button alt">Browse Archives</a>
+											</section>
+
+										<!-- Something -->
+											<section>
+												<h2 class="major"><span>Ipsum Dolore</span></h2>
+												<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+												<p>
+													Donec sagittis massa et leo semper scele risque metus faucibus. Morbi congue mattis mi.
+													Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum sed commodo luctus blandit.
+												</p>
+												<a href="#" class="button alt">Learn more</a>
+											</section>
+
+										
+
+								</div>
+							</div>
+							<div class="9u 12u(mobile) important(mobile)">
+								<div class="content content-right">
+
+									<!-- Content -->
+
+										<article class="box page-content">
+
+											<header>
+												<h2> Compilers!</h2>
+												
+												<ul class="meta">
+													<li class="icon fa-clock-o">April-June 2017</li>
+													
+												</ul>
+											</header>
+
+											<section>
+												<span class="image featured"><img src="images/llvmCompiler.png" alt="" /></span>
+												
+											</section>
+
+											<section>
+												<h3>Overview</h3>
+												<p>
+                                                    As part of my internship at ARM, I workded on the LLVM Compiler toolchain.
+                                                </p>
+                                                <p>
+												    A key part of automating the process of verification of an Architecture Specification is the use of a form of mechanical translation of ARM’s Architecture to an executable binary, C++ and Verilog models for formal verification.The AIG department in ARM has various tools that work on the Architecure specification language(ASL). 
+                                                </p>
+                                                <p>
+                                                    The LLVM Compiler toolchain was chosen as a possible candidate for replacing the existing tools.It is open source and there is excellent documentation available online for beginners.
+                                                </p>
+                                                
+                                                <h5> Motivation</h5>
+                                                <p> 
+                                                    Currently ARM tools handle different tasks such as interpreting the ASL, generating C++ and Verilog. They have a significantly high build time, and hence will be difficult to scale as the volume of the architecture specification increases in the upcoming versions. 
+                                                    <br><br>
+                                                    All of this leads to the need of a well-documented tool that may serve as a common interface for all existing tools, and may be used for the same use cases as the existing tools. The LLVM Project meets these requirements and consists of modular and reusable compiler technologies. 
+												    
+												</p>
+                                                
+                                                <h5> Goal </h5>
+                                                <p> 
+                                                    The end goal of the project was to create a llvm-based compiler for supporting the existing use-cases of the current tools. 
+												    
+												</p>
+											
+                                                
+											</section>
+                                            
+                                           
+                                            
+                                            <section>
+												<h3>Task 1- Lexer + Parser + AST design </h3>
+                                                <h5>a) Designed a Lexer using Flex tool -</h5>
+                                                
+                                                <h6> Background</h6>
+                                                <p>
+                                                     Flex is a Lexer generator tool and caters to tokenizing the input source program. It uses a Type-3 grammar implementation, or more concretely,regular expressions (regex) specification file as the input.
+                                                </p>
+                                                <h6>Procedure</h6>
+												<p>
+												   This process involved creating regular expressions for specifying patters for tokens like identifiers, integer, hexadecimal and floating point constants, keywords and operators in the input source ASL.
+												</p>
+                                                
+                                                
+                                                <h5>B) Designed a Parser using YACC Bison tool –</h5>
+                                                
+                                                <h6> Background</h6>
+                                                <p>
+                                                     YACC Bison is a bottom-up Parser generator tool and is used to express the structure of languages with a Context Free Grammar using Backus Naur Form (BNF) grammar.It is used for checking syntax of the input program. 
+                                                </p>
+                                                <p>
+                                                    Bison generates a bottom-up LR(1) Parser that uses shift-reduce parsing , as opposed to the more intuitive top-down Parser. The Parser uses a lookahead of 1 token to decide whether to shift or reduce. The term “shift-reduce” is used to refer to the usage of a parser stack, containing the already parsed tokens , and when a new lookahead token is seen , if the topmost symbol in the parser stack and the token can be converted or reduced partially or completely to a grammar rule , then it is shifted otherwise the topmost symbol on the stack is reduced.
+                                                </p>
+                                                <h6>Procedure</h6>
+												<p>
+												   The first stage is modifying the Lexer to return tokens when the yylex() function is called. This is known as “Pull” mode of the Parser , since it pulls the tokens from the Lexer. The next step is deciding what semantic value the recognized tokens must have. For example, when an integer is tokenized in the input, the Lexer just tokenizes it as a C string , but does not assign a type or a value to it. It is upto the programmer to decide what type may be assigned to the recognized token on the Lexer end. These tokens and their types need to be declared in a header file and included as a header in the Parser and Lexer specification files. The final stage involves writing grammar productions in Backus Naur Form.At this stage, it is important to decide what type of object must be parsed by the Parser. It is handled by a C union declaration in the Parser file and this is a similar problem to deciding the semantic value of tokens as explained above. The types in the Union declaration are determined by the AST constructs and the remaining procedure is explained below.
+												</p>
+												
+                                                
+                                                <h5>C) Designing an Abstract Syntax Tree</h5>
+                                                
+                                                <h6> Background</h6>
+                                                <p>
+                                                     An Abstract Syntax tree is a form of syntactic representation of the input source and is dependent on the source language. It is known as a Syntax tree as it uniquely determines a structure for unambiguous grammars. It is known known as “abstract”, since in contrast to a Parse Tree it does not represent every detail of the syntax. For example, it may ignore parenthesis, or semi-colons, if the input language has any. The method of constructing the AST by attaching action rules, that build the AST nodes, to productions in the grammar is known as Syntax Directed Translation (SDT). It is extremely useful for carrying out optimization passes.
+                                                </p>
+                                                <h6>Procedure</h6>
+												<p>
+												   This is a slightly more involved process than the earlier two.
+												</p>
+												
+												
+											</section>
+                                            
+                                            
+                                             <section>
+												<h3>Task 2 - generating Valid ir</h3>
+												<p>
+												    The second task was simple as it was already accounted for when the AST was designed, since the design of class structures are influenced by the LLVM IR that needs to be generated.
+                                                  
+                                                    This involves understanding the usage of the LLVM API which is not explained here to avoid too many details.
+                                                    
+                                                    
+												</p>
+												
+                                              
+											</section>
+                                            
+                                            <section>
+												<h3>Task 3 & 4 - IR level and ast level </h3>
+                                                  
+                                                <p>
+                                                  These two tasks were the most crucial in  learning about how Probablistic Robots navigated accurately in a given map.
+                                                </p>
+                                                  
+                                                <h5> task 3 - Way point navigation </h5>
+                                                <p>
+                                                    This involved represnting the particles ,the coordinate system,walls in the map and the angle of the robot with the horizontal axis. 
+                                                    
+                                                    In order to test this, the task was to follow a wall in the lab room.
+												</p>
+                                                  
+                                                  <h5>Task 4 - MCL </h5> 
+												<p>
+												
+                                                    MCL uses a particle filter to accept/reject particles that don't represent the current position ( as a pair of coordinates ) of the robot accurately.
+                                                     The complex maths was involved in representing Sonar Likelihood and using the probability value for a Update ( accepting/rejecting) particles.
+                                                 </p>
+                                                
+                                                <h5> Steps involved in the algorithm</h5>
+                                                <ol>
+                                                    <li> Motion Prediction based on Odometry</li>
+                                                    <li> Measurement Update based on Sonar</li>
+                                                    <li>Normalisation</li>
+                                                    <li>ReSampling.</li>
+                                                </ol>
+                                                    
+                                                    
+                                                <p> A complete specification of this first task can be seen <a href="https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/questions4.pdf">here</a>
+                                                    and 
+                                                   <a href="https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/questions5.pdf">here.</a>
+                                                  
+                                                </p>
+                                                   
+											 </section>
+                                            
+                                              <section>
+												<h3>Task 5 - Final Task</h3>
+												<p>
+												    The final task was simply to find 3 obstacles placed in the map.It involved using the sonar to detect walls and obstacles (which were bottles for this task) 
+                                                     and them bump into the bottles and then return back to the starting position in a certain time limit to gain maximum points.
+                                                    
+												</p>
+												
+                                                <p> A complete specification of this first task can be seen <a href="https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/questions7.pdf">here.</a></p>
+											</section>
+                                           
+
+
+											<section>
+												<h3>So in conclusion ...</h3>
+												<p>
+													Enjoyed the course/project as it was my first robotics course and the tasks were very well organized , thanks to Mr.Andrew Davison for that,fit right into the schedule and at the same time challenging upto the level of a very basic introductory course to Probablistic robotics. It also taught me to work in a team and use version control software Git.
+												</p>
+												
+											</section>
+
+										</article>
+
+								</div>
+							</div>
+						</div>
+						<div class="row 200%">
+							<div class="12u">
+
+								<!-- Features -->
+									<!-- Features -->
+									<section class="box features">
+										<h2 class="major"><span>Other Projects</span></h2>
+										<div>
+											<div class="row">
+												<div class="3u 12u(mobile)">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+															<h3><a href="https://github.com/malharjajoo/caches_assignment">Write-Back Cache Simulator</a></h3>
+															<p>
+												                Built a write-back cache simulator with LRU replacement policy  in C++.
+															</p>
+														</section>
+
+												</div>
+												<div class="3u 12u(mobile)">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+															<h3><a href="#"> MIPS CPU simulator</a></h3>
+															<p>
+																Built a CPU simulator and testbench for the  MIPS I instruction set. 
+															</p>
+														</section>
+
+												</div>
+												<div class="3u 12u(mobile)">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+															<h3><a href="#"> LLVM compiler</a></h3>
+															<p>
+																Worked with LLVM Compiler Toolchain as part of an internship.
+															</p>
+														</section>
+
+												</div>
+												<div class="3u 12u(mobile)">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+															<h3><a href="https://github.com/malharjajoo/Robotics"> Robotics </a></h3>
+															<p>
+																Built a Robot using Lego Mindstorms NXT and a Raspberry Pi.  
+															</p>
+														</section>
+
+												</div>
+											</div>
+											
+										</div>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer" class="container">
+					<div class="row 200%">
+						<div class="12u">
+
+							<!-- About -->
+								<section>
+									<h2 class="major"><span>What's this about?</span></h2>
+									<p>
+										This is <strong>TXT</strong>, yet another free responsive site template designed by
+										<a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net">HTML5 UP</a>. It's released under the
+										<a href="http://html5up.net/license/">Creative Commons Attribution</a> license so feel free to use it for
+										whatever you're working on (personal or commercial), just be sure to give us credit for the design.
+										That's basically it :)
+									</p>
+								</section>
+
+						</div>
+					</div>
+					<div class="row 200%">
+						<div class="12u">
+
+							<!-- Contact -->
+								<section>
+									<h2 class="major"><span>Get in touch</span></h2>
+									<ul class="contact">
+										<li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
+										<li><a class="icon fa-twitter" href="#"><span class="label">Twitter</span></a></li>
+										<li><a class="icon fa-instagram" href="#"><span class="label">Instagram</span></a></li>
+										<li><a class="icon fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
+										<li><a class="icon fa-google-plus" href="#"><span class="label">Google+</span></a></li>
+									</ul>
+								</section>
+
+						</div>
+					</div>
+
+					<!-- Copyright -->
+						<div id="copyright">
+							<ul class="menu">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/skel-viewport.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

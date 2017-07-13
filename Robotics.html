@@ -1,0 +1,396 @@
+<!DOCTYPE HTML>
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Robotics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<div class="logo container">
+						<div>
+							<h1><a href="index.html" id="logo">Raspberry Pi robot</a></h1>
+							
+						</div>
+					</div>
+				</header>
+
+			<!-- Navbar -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<a class="current" href="#">Projects</a>
+							<ul>
+								<li><a href="#">Cache simulator</a></li>
+								<li><a href="#">MIPS CPU simulator</a></li>
+                                 <li><a href="#">LLVM Compiler</a></li>
+                                <li><a href="Robotics.html">Robotics Group Project</a></li>
+								<li>
+									<a href="#"> fill this if needed </a>
+									<ul>
+										<li><a href="#">part 1</a></li>
+										<li><a href="#">part 2</a></li>
+										<li><a href="#">part 3</a></li>
+										<li><a href="#">part 4</a></li>
+									</ul>
+								</li>
+								
+							</ul>
+						</li>
+                        
+						<li><a href="AboutMe.html">About</a></li>
+                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+						
+					</ul>
+				</nav>
+
+				
+
+			<!-- Main -->
+				<div id="main-wrapper">
+					<div id="main" class="container">
+						<div class="row">
+							<div class="3u 12u(mobile)">
+								<div class="sidebar">
+
+									<!-- Sidebar -->
+
+										<!-- Recent Posts -->
+											<section>
+												<h2 class="major"><span>Recent Posts</span></h2>
+												<ul class="divided">
+													<li>
+														<article class="box post-summary">
+															<h3><a href="#">A Subheading</a></h3>
+															<ul class="meta">
+																<li class="icon fa-clock-o">6 hours ago</li>
+																<li class="icon fa-comments"><a href="#">34</a></li>
+															</ul>
+														</article>
+													</li>
+													<li>
+														<article class="box post-summary">
+															<h3><a href="#">Another Subheading</a></h3>
+															<ul class="meta">
+																<li class="icon fa-clock-o">9 hours ago</li>
+																<li class="icon fa-comments"><a href="#">27</a></li>
+															</ul>
+														</article>
+													</li>
+													<li>
+														<article class="box post-summary">
+															<h3><a href="#">And Another</a></h3>
+															<ul class="meta">
+																<li class="icon fa-clock-o">Yesterday</li>
+																<li class="icon fa-comments"><a href="#">184</a></li>
+															</ul>
+														</article>
+													</li>
+												</ul>
+												<a href="#" class="button alt">Browse Archives</a>
+											</section>
+
+										<!-- Something -->
+											<section>
+												<h2 class="major"><span>Ipsum Dolore</span></h2>
+												<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+												<p>
+													Donec sagittis massa et leo semper scele risque metus faucibus. Morbi congue mattis mi.
+													Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum sed commodo luctus blandit.
+												</p>
+												<a href="#" class="button alt">Learn more</a>
+											</section>
+
+										<!-- Something -->
+											<section>
+												<h2 class="major"><span>Magna Feugiat</span></h2>
+												<p>
+													Rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
+													Donec sagittis massa et leo semper scele risque metus faucibus. Morbi congue mattis mi.
+													Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum sed commodo luctus blandit.
+												</p>
+												<a href="#" class="button alt">Learn more</a>
+											</section>
+
+								</div>
+							</div>
+							<div class="9u 12u(mobile) important(mobile)">
+								<div class="content content-right">
+
+									<!-- Content -->
+
+										<article class="box page-content">
+
+											<header>
+												<h2>Raspberry pi robot</h2>
+												
+												<ul class="meta">
+													<li class="icon fa-clock-o">November 2016</li>
+													
+												</ul>
+											</header>
+
+											<section>
+												<span class="image featured"><img src="images/caterpi(e).jpg" alt="" /></span>
+												<p>
+													Robot made with Raspberry pi and Lego mindstorm NXT.
+												</p>
+											</section>
+
+											<section>
+												<h3>Overview</h3>
+												<p>
+												    This robot was made as part of the Robotics course at Imperial College London in the Autumn Term, 2016. The team consisted of 4 members which was just the appropriate number of people for effective communication and work. 
+                                                </p>
+                                                <p> 
+                                                    The end goal of the project was to create a Robot that could navigate accurately in a given and known map ( Localisation only ) with a single sonar sensor for sensing the depth of surrounding objects/walls. The final task also consisted of accurately finding and bumping into 3 obstacles which could be placed anywhere in the given map.
+												    
+												</p>
+											
+											</section>
+                                            
+                                            <section>
+                                              <p>
+												    The course was divided into several milestones which have been explained in detail below in a chronological order. 
+												</p>
+												
+											</section>
+                                            
+                                            <section>
+												<h3>Task 1- Tuning PID Control for Odometry</h3>
+												<p>
+												    The first task was to tune the PID control and calibrate the robotics for Odometry.Odometry refers to calibrating the distance travelled by a robot based on internal sensors ( like a Rotary encoder).
+                                                    
+                                                    This was a little tricky as it involved several parameters that we were required to tune.
+                                                    
+                                                    In order to test this, the first task was to calibrate the robot to trace a Square region of 10 cm sides , a total of 10 times, on a sheet of paper, and return back to the start postion.
+												</p>
+												
+                                                <p> A complete specification of this first task can be seen <a href="https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/questions1.pdf">here.</a></p>
+											</section>
+                                            
+                                            
+                                             <section>
+												<h3>Task 2 - Forward/Backward Proportional Servoing with Touch and Sonar Sensor</h3>
+												<p>
+												    The second task was simple and involved using the sonar to detect obstacles and try to avoid it by moving away ( forward or backward ) from a potentially moving obstacle.If the robot hit an obstacle , the touch sensor was used to detect it.
+                                                  
+                                                    
+                                                    In order to test this, the second task was to follow a wall in the lab room.
+												</p>
+												
+                                                <p> A complete specification of this first task can be seen <a href="https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/questions3.pdf">here.</a></p>
+											</section>
+                                            
+                                            <section>
+												<h3>Task 3 & 4 - Way point Navigation and Monte Carlo Localization ( MCL )</h3>
+                                                  
+                                                <p>
+                                                  These two tasks were the most crucial in  learning about how Probablistic Robots navigated accurately in a given map.
+                                                </p>
+                                                  
+                                                <h5> task 3 - Way point navigation </h5>
+                                                <p>
+                                                    This involved represnting the particles ,the coordinate system,walls in the map and the angle of the robot with the horizontal axis. 
+                                                    
+                                                    In order to test this, the task was to follow a wall in the lab room.
+												</p>
+                                                  
+                                                  <h5>Task 4 - MCL </h5> 
+												<p>
+												
+                                                    MCL uses a particle filter to accept/reject particles that don't represent the current position ( as a pair of coordinates ) of the robot accurately.
+                                                     The complex maths was involved in representing Sonar Likelihood and using the probability value for a Update ( accepting/rejecting) particles.
+                                                 </p>
+                                                
+                                                <h5> Steps involved in the algorithm</h5>
+                                                <ol>
+                                                    <li> Motion Prediction based on Odometry</li>
+                                                    <li> Measurement Update based on Sonar</li>
+                                                    <li>Normalisation</li>
+                                                    <li>ReSampling.</li>
+                                                </ol>
+                                                    
+                                                    
+                                                <p> A complete specification of this first task can be seen <a href="https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/questions4.pdf">here</a>
+                                                    and 
+                                                   <a href="https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/questions5.pdf">here.</a>
+                                                  
+                                                </p>
+                                                   
+											 </section>
+                                            
+                                              <section>
+												<h3>Task 5 - Final Task</h3>
+												<p>
+												    The final task was simply to find 3 obstacles placed in the map.It involved using the sonar to detect walls and obstacles (which were bottles for this task) 
+                                                     and them bump into the bottles and then return back to the starting position in a certain time limit to gain maximum points.
+                                                    
+												</p>
+												
+                                                <p> A complete specification of this first task can be seen <a href="https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/questions7.pdf">here.</a></p>
+											</section>
+                                           
+
+
+											<section>
+												<h3>So in conclusion ...</h3>
+												<p>
+													Enjoyed the course/project as it was my first robotics course and the tasks were very well organized , thanks to Mr.Andrew Davison for that,fit right into the schedule and at the same time challenging upto the level of a very basic introductory course to Probablistic robotics. It also taught me to work in a team and use version control software Git.
+												</p>
+												
+											</section>
+
+										</article>
+
+								</div>
+							</div>
+						</div>
+						<div class="row 200%">
+							<div class="12u">
+
+								<!-- Features -->
+									<section class="box features">
+										<h2 class="major"><span>OTHER PROJECTS</span></h2>
+										<div>
+											<div class="row">
+												<div class="3u 12u(mobile)">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+															<h3><a href="#">A Subheading</a></h3>
+															<p>
+																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															</p>
+														</section>
+
+												</div>
+												<div class="3u 12u(mobile)">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+															<h3><a href="#">Another Subheading</a></h3>
+															<p>
+																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															</p>
+														</section>
+
+												</div>
+												<div class="3u 12u(mobile)">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+															<h3><a href="#">And Another</a></h3>
+															<p>
+																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															</p>
+														</section>
+
+												</div>
+												<div class="3u 12u(mobile)">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+															<h3><a href="#">And One More</a></h3>
+															<p>
+																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															</p>
+														</section>
+
+												</div>
+											</div>
+											<div class="row">
+												<div class="12u">
+													<ul class="actions">
+														<li><a href="#" class="button big">Do Something</a></li>
+														<li><a href="#" class="button alt big">Think About It</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer" class="container">
+					<div class="row 200%">
+						<div class="12u">
+
+							<!-- About -->
+								<section>
+									<h2 class="major"><span>What's this about?</span></h2>
+									<p>
+										This is <strong>TXT</strong>, yet another free responsive site template designed by
+										<a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net">HTML5 UP</a>. It's released under the
+										<a href="http://html5up.net/license/">Creative Commons Attribution</a> license so feel free to use it for
+										whatever you're working on (personal or commercial), just be sure to give us credit for the design.
+										That's basically it :)
+									</p>
+								</section>
+
+						</div>
+					</div>
+					<div class="row 200%">
+						<div class="12u">
+
+							<!-- Contact -->
+								<section>
+									<h2 class="major"><span>Get in touch</span></h2>
+									<ul class="contact">
+										<li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
+										<li><a class="icon fa-twitter" href="#"><span class="label">Twitter</span></a></li>
+										<li><a class="icon fa-instagram" href="#"><span class="label">Instagram</span></a></li>
+										<li><a class="icon fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
+										<li><a class="icon fa-google-plus" href="#"><span class="label">Google+</span></a></li>
+									</ul>
+								</section>
+
+						</div>
+					</div>
+
+					<!-- Copyright -->
+						<div id="copyright">
+							<ul class="menu">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/skel-viewport.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
