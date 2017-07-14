@@ -142,9 +142,11 @@
 		font-style: italic;
 	}
 
-	p, ul, ol, dl, table {
+	 p ,ul, ol, dl, table {
 		margin-bottom: 3em;
 	}
+
+  
 
 /* Section/Article */
 
@@ -198,7 +200,7 @@
 
 		&.featured {
 			display: block;
-			width: 100%;
+			width: 80%;
 			margin: 0 0 2em 0;
 		}
 
@@ -1645,5 +1647,9 @@
 
 
 .myimg-circle {
+    border-radius: 50%;
+}
+
+.circularImg {
     border-radius: 50%;
 }
