@@ -126,26 +126,26 @@
 											<section>
 												<h3>Overview</h3>
 												<p>
-                                                    As part of my internship at ARM, I workded on the LLVM Compiler toolchain.
+                                                    As part of my internship at ARM, I worked on the LLVM Compiler toolchain.
                                                 </p>
                                                 <p>
-												    A key part of automating the process of verification of ARMs Architecture Specification is the use of a form of mechanical translation of ARM’s Architecture to an executable binary, C++ and Verilog models for formal verification.The AIG department in ARM has various tools that work on the Architecure specification language(ASL) to achieve these goals. 
+												    A key part of automating the process of verification of ARMs Architecture Specification is the use of a form of mechanical translation of ARM’s Architecture to an executable binary. The AIG department in ARM has various internal tools that work on the Architecure specification language(ASL) to achieve these goals. 
                                                 </p>
                                                 <p>
-                                                    The LLVM Compiler toolchain was chosen as a possible candidate for replacing the existing tools.It's an open source tool and there is excellent documentation available online for beginners.
+                                                    The LLVM Compiler toolchain was chosen as a  candidate for potentially replacing the existing tools. It's an open source tool and there is excellent documentation available online for beginners.
                                                 </p>
                                                 
                                                 <h5> Motivation</h5>
                                                 <p> 
-                                                    Currently ARM tools handle different tasks such as interpreting the ASL, generating C++ and Verilog. They have a significantly high build time, and hence will be difficult to scale as the volume of the architecture specification increases in the upcoming versions. 
+                                                    ARM has various internal tools that read and transform ASL. These tools are not efficient and scalable relative to the increasing size of the ARM ARM ( Architecture Reference Manual ). 
                                                     <br><br>
-                                                    All of this leads to the need of a well-documented tool that may serve as a common interface for all existing tools, and may be used for the same use cases as the existing tools. The LLVM Project meets these requirements and consists of modular and reusable compiler technologies. 
+                                                    All of this leads to the need of a well-documented tool that may serve as a common interface for all existing tools, and may be used for the same use cases as the existing tools. The LLVM Toolchain consists of modular and reusable compiler technologies and may potentially meet these requirements.
 												    
 												</p>
                                                 
                                                 <h5> Goal </h5>
                                                 <p> 
-                                                    The end goal of the project was to create a llvm-based compiler for supporting the existing use-cases of the current tools. 
+                                                    The end goal of the project was to assess the feasibility of a llvm-based compiler for supporting the existing use-cases of the current tools. 
 												    
 												</p>
 											
@@ -160,7 +160,7 @@
                                                 
                                                 <h6> Background</h6>
                                                 <p>
-                                                     Flex is a Lexer generator tool and caters to tokenizing the input source program. It uses a Type-3 grammar implementation, or more concretely,regular expressions (regex) specification file as the input.
+                                                     Flex is a Lexer generator tool and caters to tokenizing the input source program. It uses a Type-3 grammar implementation, or more concretely, regular expressions (regex) specification file as the input.
                                                 </p>
                                                 <h6>Procedure</h6>
 												<p>
@@ -175,11 +175,11 @@
                                                      YACC Bison is a bottom-up Parser generator tool and is used to express the structure of languages with a Context Free Grammar using Backus Naur Form (BNF) grammar.It is used for checking syntax of the input program. 
                                                 </p>
                                                 <p>
-                                                    Bison generates a bottom-up LR(1) Parser that uses shift-reduce parsing , as opposed to the more intuitive top-down Parser. The Parser uses a lookahead of 1 token to decide whether to shift or reduce. The term “shift-reduce” is used to refer to the usage of a parser stack, containing the already parsed tokens , and when a new lookahead token is seen , if the topmost symbol in the parser stack and the token can be converted or reduced partially or completely to a grammar rule , then it is shifted otherwise the topmost symbol on the stack is reduced.
+                                                    Bison generates a bottom-up LR(1) Parser that uses shift-reduce parsing, as opposed to the more intuitive top-down Parser. The Parser uses a lookahead of 1 token to decide whether to shift or reduce. The term “shift-reduce” refers to the usage of a parser stack, containing the already parsed tokens , and when a new lookahead token is seen , if the topmost symbol in the parser stack and the token can be reduced partially or completely to a grammar rule , then it is shifted onto the stack otherwise the topmost symbol on the stack is reduced.
                                                 </p>
                                                 <h6>Procedure</h6>
 												<p>
-												   The first stage is modifying the Lexer to return tokens when the yylex() function is called. This is known as “Pull” mode of the Parser , since it pulls the tokens from the Lexer. The next step is deciding what semantic value the recognized tokens must have. For example, when an integer is tokenized in the input, the Lexer just tokenizes it as a C string , but does not assign a type or a value to it. It is upto the programmer to decide what type may be assigned to the recognized token on the Lexer end. These tokens and their types need to be declared in a header file and included as a header in the Parser and Lexer specification files. The final stage involves writing grammar productions in Backus Naur Form.At this stage, it is important to decide what type of object must be parsed by the Parser. It is handled by a C union declaration in the Parser file and this is a similar problem to deciding the semantic value of tokens as explained above. The types in the Union declaration are determined by the AST constructs and the remaining procedure is explained below.
+												   The first stage is modifying the Lexer to return tokens when the yylex() function is called. This is known as “Pull” mode of the Parser , since it pulls the tokens from the Lexer. The next step is deciding what semantic value the recognized tokens must have. For example, when an integer is tokenized in the input, the Lexer just tokenizes it as a C string , but does not assign a type or a value to it. It is upto the programmer to decide what type may be assigned to the recognized token on the Lexer end. These tokens and their types need to be declared in a header file and included as a header in the Parser and Lexer specification files. The final stage involves writing grammar productions in Backus Naur Form.At this stage, it is important to decide what type of object must be parsed by the Parser. It is handled by a C union declaration in the Parser file and this is a similar problem to deciding the semantic value of tokens as explained above. The types in the Union declaration are determined by the AST constructs.The remaining procedure is explained below.
 												</p>
 												
                                                 
@@ -187,15 +187,15 @@
                                                 
                                                 <h6> Background</h6>
                                                 <p>
-                                                     An Abstract Syntax tree is a form of syntactic representation of the input source and is dependent on the source language. It is known as a Syntax tree as it uniquely determines a structure for unambiguous grammars. It is known known as “abstract”, since in contrast to a Parse Tree it does not represent every detail of the syntax. For example, it may ignore parenthesis, or semi-colons, if the input language has any. The method of constructing the AST by attaching action rules, that build the AST nodes, to productions in the grammar is known as Syntax Directed Translation (SDT). It is extremely useful for carrying out optimization passes.
+                                                     An Abstract Syntax tree is a form of syntactic representation of the input source and is dependent on the source language. It is known as a Syntax tree as it uniquely determines a structure for unambiguous grammars. It is known as “abstract” since in contrast to a Parse Tree it does not represent every detail of the syntax. For example, it may ignore parenthesis, or semi-colons, if the input language has any. The method of constructing the AST by attaching action rules, that build the AST nodes, to productions in the grammar is known as Syntax Directed Translation (SDT). 
                                                 </p>
                                                 <h6>Procedure</h6>
 												<p>
-												   This is a slightly more involved process than the earlier two.This stage involves declaring C++ classes for most productions in the BNF grammar, and once the production is parsed, Bison returns a pointer to the object that parsed. The type of this object is determined by C++ classes declared in the AST header file
+												   This is a slightly more involved process than the earlier two.This stage involves declaring C++ classes for most productions in the BNF grammar, and once the production is parsed, Bison returns a pointer to the object that parsed. The type of this object is determined by the union in the bison file , which in trun is determined by the C++ classes declared in the AST header file.
 												</p>
 												
                                                 <p>
-                                                    An example of an AST Node class will be FunctionProtoTypeAST that represents a Function prototype or declaration with external linkage. It’s member data consists of the Function name as a string, parameter names as a vector of strings, parameter Types as a vector of LLVM Type and the return types as a vector of LLVM Type. It consists of various public getters and setters for its member data and also contains the virtual codegen() function that is used to generate the IR.
+                                                    An example of an AST Node class will be FunctionProtoTypeAST that represents a Function prototype or declaration with external linkage. It’s member data consists of the Function name as a string, parameter names as a vector of strings, parameter Types as a vector of llvm::Type class and the return types as a vector of llvm::Type class. It consists of various public getters and setters for its member data and also contains the virtual codegen() function that is used to generate the IR.
                                                 </p>
 												
 											</section>
@@ -204,7 +204,7 @@
                                              <section>
 												<h3>Task 2 - generating Valid ir</h3>
 												<p>
-												    The second task was simple as it was already accounted for when the AST was designed, since the design of class structures is influenced by the LLVM IR that needs to be generated.
+												    The second task was simple as it was already accounted for when the AST was designed, since the design of class structures is influenced by the LLVM IR that needs to be generated in this step.
                                                   
                                                     This involved understanding the usage of the LLVM API which is not explained here to avoid specific details.
                                                     
@@ -214,10 +214,10 @@
 											</section>
                                             
                                             <section>
-												<h3>Task 3 - transformations </h3>
+												<h3>Task 3 - Transformations </h3>
                                                   
                                                 <p>
-                                                  This task was the most crucial in deciding feasibility of using the existing tool.
+                                                  This task was the most crucial in deciding feasibility of using LLVM toolchain.
                                                     <br>
                                                     Due to the confidential nature of this task, details/code cannot be provided.
                                                 </p>
@@ -227,8 +227,8 @@
 											<section>
 												<h3> conclusion ...</h3>
 												<p>
-                                                    Although the project was discontinued due to shortcomings of the API for ARMs purpose, I
-													enjoyed the project as it was my first experience of using the LLVM API and also gained some exposure to the SSA form.I also learnt more about the ARM specification language and how it describes the architecture.  
+                                                    Although the project was discontinued due to shortcomings of the LLVM API for ARMs purpose, I
+													enjoyed the project as it was my first experience of using the LLVM API and also gained more exposure to Compiler Theory and optimizations. I also learnt more about the ARM specification language(ASL) and how it describes the architecture.  
 												</p>
 												
 											</section>
