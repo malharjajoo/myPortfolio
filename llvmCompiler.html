@@ -129,7 +129,7 @@
                                                     As part of my internship at ARM, I worked on the LLVM Compiler toolchain.
                                                 </p>
                                                 <p>
-												    A key part of automating the process of verification of ARMs Architecture Specification is the use of a form of mechanical translation of ARM’s Architecture to an executable binary. The AIG department in ARM has various internal tools that work on the Architecure specification language(ASL) to achieve these goals. 
+												    A key part of automating the process of verification of ARMs Architecture Specification is the use of a form of mechanical translation of ARM’s Architecture to an executable binary. The AIG department in ARM has various internal tools that work on the Architecure specification language( ASL ) to achieve these goals. 
                                                 </p>
                                                 <p>
                                                     The LLVM Compiler toolchain was chosen as a  candidate for potentially replacing the existing tools. It's an open source tool and there is excellent documentation available online for beginners.
@@ -139,7 +139,7 @@
                                                 <p> 
                                                     ARM has various internal tools that read and transform ASL. These tools are not efficient and scalable relative to the increasing size of the ARM ARM ( Architecture Reference Manual ). 
                                                     <br><br>
-                                                    All of this leads to the need of a well-documented tool that may serve as a common interface for all existing tools, and may be used for the same use cases as the existing tools. The LLVM Toolchain consists of modular and reusable compiler technologies and may potentially meet these requirements.
+                                                    All of this leads to the need of a well-documented tool that may serve as a common interface for all existing tools, and may be used to support the existing use cases. The LLVM Toolchain consists of modular and reusable compiler technologies and may potentially meet these requirements.
 												    
 												</p>
                                                 
@@ -160,11 +160,11 @@
                                                 
                                                 <h6> Background</h6>
                                                 <p>
-                                                     Flex is a Lexer generator tool and caters to tokenizing the input source program. It uses a Type-3 grammar implementation, or more concretely, regular expressions (regex) specification file as the input.
+                                                     Flex is a Lexer generator tool and caters to tokenizing the input source program. It uses a Type-3 grammar implementation, or more concretely, regular expressions ( regex ) specification file as the input.
                                                 </p>
                                                 <h6>Procedure</h6>
 												<p>
-												   This process involved creating regular expressions for specifying patters for tokens like identifiers, integer, hexadecimal and floating point constants, keywords and operators in the input source ASL.
+												   This process involved creating regular expressions for specifying patterns for tokens like identifiers, integer, hexadecimal and floating point constants, keywords and operators in the input source ASL.
 												</p>
                                                 
                                                 
@@ -172,7 +172,7 @@
                                                 
                                                 <h6> Background</h6>
                                                 <p>
-                                                     YACC Bison is a bottom-up Parser generator tool and is used to express the structure of languages with a Context Free Grammar using Backus Naur Form (BNF) grammar.It is used for checking syntax of the input program. 
+                                                     YACC Bison is a bottom-up Parser generator tool and is used to express the structure of languages with a Context Free Grammar using Backus Naur Form (BNF) grammar. It is used for checking syntax of the input program. 
                                                 </p>
                                                 <p>
                                                     Bison generates a bottom-up LR(1) Parser that uses shift-reduce parsing, as opposed to the more intuitive top-down Parser. The Parser uses a lookahead of 1 token to decide whether to shift or reduce. The term “shift-reduce” refers to the usage of a parser stack, containing the already parsed tokens , and when a new lookahead token is seen , if the topmost symbol in the parser stack and the token can be reduced partially or completely to a grammar rule , then it is shifted onto the stack otherwise the topmost symbol on the stack is reduced.
@@ -183,7 +183,7 @@
 												</p>
 												
                                                 
-                                                <h5>C) Designing an Abstract Syntax Tree</h5>
+                                                <h5>C) Designing an Abstract Syntax Tree ( AST ) </h5>
                                                 
                                                 <h6> Background</h6>
                                                 <p>
@@ -191,7 +191,7 @@
                                                 </p>
                                                 <h6>Procedure</h6>
 												<p>
-												   This is a slightly more involved process than the earlier two.This stage involves declaring C++ classes for most productions in the BNF grammar, and once the production is parsed, Bison returns a pointer to the object that parsed. The type of this object is determined by the union in the bison file , which in trun is determined by the C++ classes declared in the AST header file.
+												   This is a slightly more involved process than the earlier two. This stage involves declaring C++ classes for most productions in the BNF grammar, and once the production is parsed, Bison returns a pointer to the object that was parsed. The type of this object is determined by the union in the bison file , which in turn is determined by the C++ classes declared in the AST header file.
 												</p>
 												
                                                 <p>
@@ -228,7 +228,7 @@
 												<h3> conclusion ...</h3>
 												<p>
                                                     Although the project was discontinued due to shortcomings of the LLVM API for ARMs purpose, I
-													enjoyed the project as it was my first experience of using the LLVM API and also gained more exposure to Compiler Theory and optimizations. I also learnt more about the ARM specification language(ASL) and how it describes the architecture.  
+													enjoyed the project as it was my first experience of using the LLVM API and also gained more exposure to Compiler Theory and optimizations. I also learnt more about the ARM specification language( ASL ) and how it describes the architecture.  
 												</p>
 												
 											</section>
