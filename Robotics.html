@@ -142,7 +142,7 @@
 											</section>
                                             
                                             <section>
-												<h3>Task 1- Tuning PID Control for Odometry</h3>
+												<h3>Task 1 - Tuning PID Control for Odometry</h3>
 												<p>
 												    The first task was to tune the PID control and calibrate the robotics for Odometry.Odometry refers to calibrating the distance travelled by a robot based on internal sensors ( like a Rotary encoder).
                                                     
@@ -181,19 +181,20 @@
                                                     In order to test this, the task was to follow a wall in the lab room.
 												</p>
                                                   
-                                                  <h5>Task 4 - MCL </h5> 
+                                                  <h5>Task 4 - Monte Carlo Localization ( MCL ) </h5> 
 												<p>
-												
-                                                    MCL uses a particle filter to accept/reject particles that don't represent the current position ( as a pair of coordinates ) of the robot accurately.
-                                                     The complex maths was involved in representing Sonar Likelihood and using the probability value for a Update ( accepting/rejecting) particles.
+												   
+                                                    MCL uses a particle filter to accept/reject particles that represent/misrepresent the current position ( as a pair of coordinates ) of the robot accurately.
+                                                   
+                                                     Complex math was involved in representing the Sonar Likelihood and using the probability value for an Update of the particles position. After the update a little more processing is involved and then some particles are rejected. If the formulae and the tuning is correct, the longer the robot moves around, the particles tend to gather densely around the actual coordinates of the robot.
                                                  </p>
-                                                
+                                                 The particles are initialized randomly and then the following steps are taken.
                                                 <h5> Steps involved in the algorithm</h5>
                                                 <ol>
                                                     <li> Motion Prediction based on Odometry</li>
                                                     <li> Measurement Update based on Sonar</li>
-                                                    <li>Normalisation</li>
-                                                    <li>ReSampling.</li>
+                                                    <li> Normalisation</li>
+                                                    <li> ReSampling.</li>
                                                 </ol>
                                                     
                                                     
@@ -208,7 +209,7 @@
                                               <section>
 												<h3>Task 5 - Final Task</h3>
 												<p>
-												    The final task was simply to find 3 obstacles placed in the map.It involved using the sonar to detect walls and obstacles (which were bottles for this task) 
+												    The final task was simply to find 3 obstacles placed in the map. It involved using the sonar to detect walls and obstacles (which were bottles for this task) 
                                                      and them bump into the bottles and then return back to the starting position in a certain time limit to gain maximum points.
                                                     
 												</p>
