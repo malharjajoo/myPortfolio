@@ -195,7 +195,8 @@
 												</p>
 												
                                                 <p>
-                                                    An example of an AST Node class will be FunctionProtoTypeAST that represents a Function prototype or declaration with external linkage. It’s member data consists of the Function name as a string, parameter names as a vector of strings, parameter Types as a vector of llvm::Type class and the return types as a vector of llvm::Type class. It consists of various public getters and setters for its member data and also contains the virtual codegen() function that is used to generate the IR.
+                                                    An example of an AST Node class will be FunctionProtoTypeAST that represents a Function prototype external linkage. It’s member data consists of the Function name as a string, parameter names as a vector of strings, parameter Types as a vector of llvm::Type class and the return types as a vector of llvm::Type class. It consists of various public getters and setters for its member data and also contains the virtual codegen() function that is used to generate the IR.
+                                                   
                                                 </p>
 												
 											</section>
@@ -207,6 +208,8 @@
 												    The second task was simple as it was already accounted for when the AST was designed, since the design of class structures is influenced by the LLVM IR that needs to be generated in this step.
                                                   
                                                     This involved understanding the usage of the LLVM API which is not explained here to avoid specific details.
+                                                     <br>
+                                                    An example of a consideration that you need to make during IR code generation would be the  <a href="https://en.wikipedia.org/wiki/Evaluation_strategy#Strict_evaluation"> evaluation strategy</a> for function calls.
                                                     
 												</p>
 												
@@ -327,7 +330,7 @@
                                         
 										<li><a class="icon fa-linkedin" href="https://www.linkedin.com/in/malhar-jajoo-2b9105b5/"><span class="label">Linkedin</span></a></li>
 										
-										<li><a class="icon fa-google-plus" href="#"><span class="label">Google+</span></a></li>
+										<li><a class="icon fa-google-plus" href="https://plus.google.com/100025409019749078034"><span class="label">Google+</span></a></li>
 									</ul>
 								</section>
 
