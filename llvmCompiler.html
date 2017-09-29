@@ -225,6 +225,31 @@
                                                 <p>
                                                   This task was the most crucial in deciding feasibility of using LLVM toolchain.
                                                     <br>
+                                                    The task involved implementing a basic version of 2 
+                                                    transformations required to compile Arms Architecture
+                                                    Specification Language ( ASL ). It contains very high level features and implementing one of the transforms using the LLVM API meant IR needed to be generated and then types were required to be mutated.
+                                                    <br> 
+                                                    Due to the confidential nature of this task, details/code cannot be provided.
+                                                </p>
+                                
+                                            </section>
+                                            
+                                            <section>
+												<h3>Task 4 - Extending Compiler optimization </h3>
+                                                  
+                                                <p>
+                                                  This was an attempt to improve performance of the existing compiler at Arm. It involved a flow-insensitive global range analysis of integer variables and functions (with integer return types) in the ASL language, and then replacing their types based on some criteria.
+                                                </p>
+                                                
+                                                <p>
+                                                    <b>What is Range Analysis anyway ?</b>
+                                                    <br>
+                                                    Range Analysis refers to finding lower and upper bounds for values of integer variables. This information can be used for several useful optimizations like branch prediciton, array bound check elimination, changing datatypes , etc.
+                                                </p>
+                                                <p>
+                                                    The task involved extending a compiler optimization for changing data types from custom extended precision integer type to C native int64_t datatype in order to speedup runtime. It involved changing types of integer variables and functions (with integer return types) in ASL language, and replacing it with a native C int64_t type if the bitwidth of  variable/function return type was less then 64 in signed domain. 
+
+                                                <br>
                                                     Due to the confidential nature of this task, details/code cannot be provided.
                                                 </p>
                                 
@@ -233,8 +258,7 @@
 											<section>
 												<h3> conclusion ...</h3>
 												<p>
-                                                    Although the project was discontinued due to shortcomings of the LLVM API for ARMs purpose, I
-													enjoyed the project as it was my first experience of using the LLVM API and also gained more exposure to Compiler Theory and optimizations. I also learnt more about the ARM specification language( ASL ) and how it describes the architecture.  
+                                                    I enjoyed the LLVM project as it was my first experience of using the LLVM API and also gained more exposure to Compiler Theory and optimizations. I also learnt details of integer range analysis and also about the ARM specification language and how it describes the Arm darchitecture.  
 												</p>
 												
 											</section>
