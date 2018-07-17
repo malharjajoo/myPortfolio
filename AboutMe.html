@@ -29,27 +29,10 @@
 				</header>
 
 			<!-- Navbar -->
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li>
-							<a href="#">Projects</a>
-							<ul>
-								<li><a href="Caches.html">Cache simulator</a></li>
-								<li><a href="MipsSimulator.html">MIPS CPU simulator</a></li>
-                                 <li><a href="llvmCompiler.html">LLVM Compiler</a></li>
-                                <li><a href="Robotics.html">Robotics Group Project</a></li>
-								
-								
-							</ul>
-						</li>
-                        
-						<li class="current"><a href="AboutMe.html">About</a></li>
-                        <li><a href="CV.pdf">Resume</a></li>
-						
-					</ul>
-				</nav>
-
+				
+            <div id="navbar-placeholder">
+            
+            </div>
 
 
 			<!-- Main -->
@@ -157,13 +140,25 @@
 		</div>
 
 		<!-- Scripts -->
+           
 			<script src="assets/js/jquery.min.js"></script>
+            <script>
+                    $(function(){
+                        $("#navbar-placeholder").load("nav.html");
+                    });
+
+            </script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
+           
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/skel-viewport.min.js"></script>
+           
 			<script src="assets/js/util.js"></script>
+            
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+        
+            
             
         
 	</body>
