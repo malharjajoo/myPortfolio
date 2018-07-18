@@ -6,21 +6,21 @@
 -->
 <html>
 	<head>
-		<title>Robotics</title>
+		<title>Drone Project</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
-	<body>
+	<body onload="loaded()">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<header id="header">
 					<div class="logo container">
 						<div>
-							<h1><a href="index.html" id="logo">Raspberry Pi robot</a></h1>
+							<h1><a href="index.html" id="logo">Drone State Estimation and Navigation using IP cameras</a></h1>
 							
 						</div>
 					</div>
@@ -59,7 +59,7 @@
 				<div id="main-wrapper">
 					<div id="main" class="container">
 						<div class="row">
-							<div class="3u 12u(mobile)">
+							<div class="2u 12u(mobile)">
 								<div class="sidebar">
 
 									<!-- Sidebar -->
@@ -67,23 +67,15 @@
 										<!-- Recent Posts -->
 											<section>
 												<h2 class="major"><span>Useful Links</span></h2>
-												<ul class="divided">
+												<ul>
 													
-                                                    <li> <a href="./pdfs/task1.pdf">Task 1 specification</a></li>
-
-                                                    <li>  <a href="./pdfs/task3.pdf">Task 2 specification</a>
-                                                    </li> 
-
-                                                    <li>  <a href="./pdfs/task4.pdf">Task 3 specification</a>
+                                                    <li> <a href="#"> Link to report</a>
                                                     </li>
-
-                                                    <li>
-                                                       <a href="./pdfs/task5.pdf">Task 4 specification </a>
-                                                    </li>
-
-                                                    <li> <a href="./pdfs/task7.pdf">Task 5 specification </a></li>
                                                     <br>
-													<li>
+                                                    <li>  <a href="#">Link to setup documentation </a>
+                                                    </li> 
+                                                    <br>
+                                                    <li>
 														<article class="box post-summary">
 															<h3><a href="https://github.com/malharjajoo/caches_assignment">Github code link</a></h3>
 															<a href="https://github.com/malharjajoo/caches_assignment" class="button alt">Code</a>
@@ -99,7 +91,7 @@
 
 								</div>
 							</div>
-							<div class="9u 12u(mobile) important(mobile)">
+							<div class="10u 12u(mobile) important(mobile)">
 								<div class="content content-right">
 
 									<!-- Content -->
@@ -107,133 +99,163 @@
 										<article class="box page-content">
 
 											<header>
-												<h2>Raspberry pi robot</h2>
+												<h2>Drone Tracking!</h2>
 												
 												<ul class="meta">
-													<li class="icon fa-clock-o">November 2016</li>
+													<li class="icon fa-clock-o">April - June, 2018</li>
 													
 												</ul>
 											</header>
 
 											<section>
-												<span class="image featured"><img src="images/caterpi(e).jpg" alt="" /></span>
-												<p>
-													Robot made with Raspberry pi and Lego mindstorm NXT.
-												</p>
+                                                <figure>
+                                                    <span class="image featured"><img src="images/room_pic.png" alt="" /></span>
+                                                    <figcaption class="image featured">
+                                                        Fig.1 - Figure shows the complete system: The 3 wireless cameras are mounted on stands placed around the room.
+                                                        The drone can be placed anywhere in the room, as long as it is within the view of one of the cameras.
+                                                        The room is in the EEE building at Imperial College London.
+                                                    </figcaption>
+                                                </figure>	
 											</section>
 
 											<section>
-												<h3>Overview</h3>
+												<h3>Overview</h3> 
+                                                
 												<p>
-												    This robot was made as part of the Robotics course at Imperial College London in the Autumn Term, 2016. The team consisted of 4 members which was just the appropriate number of people for effective communication and work. 
-                                                </p>
-                                                <p> 
-                                                    The end goal of the project was to create a Robot that could navigate accurately in a given and known map ( Localisation only ) with a single sonar sensor for sensing the depth of surrounding objects/walls. The final task also consisted of accurately finding and bumping into 3 obstacles which could be placed anywhere in the given map.
-												    
-												</p>
-											
-											</section>
-                                            
-                                            <section>
-                                                <p>
-												    The course was divided into several milestones which have been explained in detail below in a chronological order.
-                                                    There is also a video of one of the final 
-                                                    test runs before the challenge !
+												    This was my (individual) Final Year Project as part of my Electronics and Information Engineering ( EIE ) degree curriculum at Imperial College London.
+                                                    The goal of the project was to design and implement a real-time State Estimation and Navigation system ( for indoor environment ) for a Parrot A.R. Drone using cheap equipment. The main <b> hypothesis</b> explored in this project was:  <i>Multiple Internet Protocol ( IP ) cameras can be used for precise monitoring/tracking a Parrot A.R Drone in an indoor environment.</i>
+                                                    
+												<br>
+                                                <br>
+                                                    
+												    The project can be broadly divided into a State Estimation phase and Navigation phase. The following sections give a brief overview of each phase and also provide a video of both components in practice.
 												</p>
 												
 											</section>
                                             
                                             <section>
-												<h3>Task 1 - Tuning PID Control for Odometry</h3>
+												<h3>Task 1: State Estimation </h3>
 												<p>
-												    The first task was to tune the PID control and calibrate the robotics for Odometry.Odometry refers to calibrating the distance travelled by a robot based on internal sensors ( like a Rotary encoder).
+												    The first task was to find the State/pose of the drone using LEDs placed on the drone hull.
+                                                     
                                                     
-                                                    This was a little tricky as it involved several parameters that we were required to tune.
-                                                    
-                                                    In order to test this, the first task was to calibrate the robot to trace a Square region of 10 cm sides , a total of 10 times, on a sheet of paper, and return back to the start postion.
 												</p>
+                                                
+                                                Click on any one of the play/pause button on the videos to play/pause all of them simultaneously. The camera images are 
+                                                synchronized in order to combine measurements from the 3 cameras. 
+                                                
+                                                <br>
+                                                <br>
+                                                
+                                                <div class="container">
+                                                    <div class="row">
+                                                        
+                                                        
+                                                        <div class="col">
+                                                            <video controls width="420" height="auto" id="state_estimation:cam1"> 
+
+                                                                <source src="videos/cam777_mesh.mp4" type="video/mp4">
+                                                            </video>
+                                                        </div>
+
+                                                        <div class="col">
+                                                            <video controls width="420" height="auto" id="state_estimation:cam2"> 
+
+                                                                 <source src="videos/cam778_mesh.mp4" type="video/mp4">
+                                                            </video>
+                                                        </div>
+                                                        
+                                                        <div class="col">
+                                                            <video controls width="420" height="auto" id="state_estimation:cam3"> 
+
+                                                                 <source src="videos/cam734_mesh.mp4" type="video/mp4">
+                                                            </video>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            
 												
-                                                <p> A complete specification of this task can be seen <a href="https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/questions1.pdf">here.</a></p>
 											</section>
                                             
+                                            <p>
+                                                In order to quickly verify (visually/qualitatively) the estimation accuracy, 3D meshes were projected onto each camera image
+                                                using the Projection function of the camera. Two 3D meshes (blue and pink) are projected onto the camera image. 
+                                                The blue mesh is projected using camera-to-drone pose, pink mesh is projected using world-to-camera pose. 
+                                                
+                                            </p>     
+                                            
+                                                Based on the video, two key observations can be made: 
+                                                <ul>
+                                                    <li>
+                                                        1) The state estimates from each camera agree well with each other (since pink mesh almost aligns with blue mesh). 
+                                                    </li>
+                                                    
+                                                    <li>
+                                                        2) State Estimate obtained from each camera is reasonably accurate (since the blue mesh aligns well with the drone in each camera image).
+                                                    </li>
+                                                    
+                                                </ul>
                                             
                                              <section>
-												<h3>Task 2 - Forward/Backward Proportional Servoing with Touch and Sonar Sensor</h3>
+												<h3>Task 2: Feedback Control </h3>
 												<p>
-												    The second task was simple and involved using the sonar to detect obstacles and try to avoid it by moving away ( forward or backward ) from a potentially moving obstacle.If the robot hit an obstacle , the touch sensor was used to detect it.
-                                                  
-                                                    
-                                                    In order to test this, the second task was to follow a wall in the lab room.
+												    After building a State Estimation module, the best way to confirm the accuracy is to integrate a closed-Loop Feedback controller with the 
+                                                    State Estimation module.
 												</p>
 												
-                                                <p> A complete specification of this task can be seen <a href="https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/questions3.pdf">here.</a></p>
-											</section>
+                                               
                                             
-                                            <section>
-												<h3>Task 3 & 4 - Way point Navigation and Monte Carlo Localization ( MCL )</h3>
-                                                  
-                                                <p>
-                                                  These two tasks were the most crucial in  learning about how Probablistic Robots navigated accurately in a given map.
-                                                </p>
-                                                  
-                                                <h5> task 3 - Way point navigation </h5>
-                                                <p>
-                                                    This involved represnting the particles ,the coordinate system,walls in the map and the angle of the robot with the horizontal axis. 
-                                                    
-                                                    In order to test this, the task was to follow a wall in the lab room.
-												</p>
-                                                  
-                                                  <h5>Task 4 - Monte Carlo Localization ( MCL ) </h5> 
-												<p>
-												   
-                                                    MCL uses a particle filter to accept/reject particles that represent/misrepresent the current position ( as a pair of coordinates ) of the robot accurately.
-                                                   
-                                                     Complex math was involved in representing the Sonar Likelihood and using the probability value for an Update of the particles position. After the update a little more processing is involved and then some particles are rejected. If the formulae and the tuning is correct, the longer the robot moves around, the particles tend to gather densely around the actual coordinates of the robot.
-                                                 </p>
-                                                 The particles are initialized randomly and then the following steps are taken.
-                                                <h5> Steps involved in the algorithm</h5>
-                                                <ol>
-                                                    <li> Motion Prediction based on Odometry</li>
-                                                    <li> Measurement Update based on Sonar</li>
-                                                    <li> Normalisation</li>
-                                                    <li> ReSampling.</li>
-                                                </ol>
-                                                    
-                                                    
-                                                <p> A complete specification of these tasks can be seen <a href="https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/questions4.pdf">here</a>
-                                                    and 
-                                                   <a href="https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/questions5.pdf">here.</a>
-                                                  
-                                                </p>
-                                                   
-											 </section>
                                             
-                                              <section>
-												<h3>Task 5 - Final Task</h3>
-												<p>
-												    The final task was simply to find 3 obstacles placed in the map. It involved using the sonar to detect walls and obstacles (which were bottles for this task) 
-                                                     and them bump into the bottles and then return back to the starting position in a certain time limit to gain maximum points.
-                                                    
-												</p>
-												
-                                                <p> A complete specification of this task can be seen <a href="https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/questions7.pdf">here.</a>
-                                                  </p>
-											</section>
                                            
-                                            <h3> Video </h3>
-                                            <p>This was not the best run. Sadly, In the excitement of the challenge, we forgot to take a video of the best run.Instead this shows a somewhat short example of the task </p>
-                                            <section>
-                                                <video controls> 
-                                                    
-                                                     <source src="videos/robotics.mp4" type="video/mp4">
-                                                </video>
+                                            <h3> Evaluation: Simple Navigation Test </h3>
+                                            <p>To confirm/validate the Estimation accuracy (a single camera is used for estimation in videos below), and the Feedback Controller is integrated into the system. The destination point is marked on the ground (as a cross mark with black tape) and its coordinates are found using a measuring tape. These coordinates are provided to the Feedback controller and the drone is made to navigate from start point to the destination.
+                                            
+                                            </p>
+                                            
+                                            
+                                            
+                                            
+                                                
+                                                Click on any one of the videos to start both simultaneously.
+                                                 
+                                                 <br>
+                                                 <br>
+                                            
+                                                
+                                                <div class="container">
+                                                    <div class="row">
+                                                        
+                                                        
+                                                        <div class="col">
+                                                            <video controls width="420" height="auto" id="navigation:cam1"> 
+
+                                                                <source src="videos/pidControl_faulty.mp4" type="video/mp4">
+                                                            </video>
+                                                        </div>
+
+                                                        <div class="col">
+                                                            <video controls width="420" height="auto" id="navigation:cam2"> 
+
+                                                                 <source src="videos/pidControl_perfect.mp4" type="video/mp4">
+                                                            </video>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                             </section>
 
 
 											<section>
-												<h3>Conclusion ...</h3>
+												<h3>Conclusion</h3>
 												<p>
-													Enjoyed the course/project as it was my first robotics course and the tasks were very well organized , thanks to Mr.Andrew Davison for that, fit right into the schedule and at the same time challenging upto the level of a very basic introductory course to Probablistic robotics. It also taught me to work in a team and use version control software Git.
+													This project has successfully confirmed the Hypothesis stated at the beginning.
+
+                                                    The project provides a detailed design of various components and algorithms needed to implement the State Estimation module, with a special emphasis on making sure the real-time requirements are met at every stage of the process. It is also ensured that the design is future extensible if someone wishes to continue on this project later.
+
+                                                </p>
+                                                <p>
+                                                    The performance of the State Estimation module, both in terms of accuracy and latency was evaluated. Based on the Evaluation results, the Estimation Error was found to be approximately 5.5351 cm for Position and 2.127 degrees for Orientation. The real-time characteristic of the final design were found to be 29 FPS (if using 1 camera), 18 FPS (if using 2 cameras), 12 FPS (if using 3 cameras). These values are not as accurate/fast as commercial products, however, this is the trade-off when working with cheaper cameras and LEDs in the visible spectrum as compared to using expensive cameras and LEDs in the Infrared (IR) spectrum.
 												</p>
 												
 											</section>
@@ -342,5 +364,94 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
+            <script>
+                function loaded() 
+                {
+                    
+                    
+                    var vid1_stEst = document.getElementById("state_estimation:cam1");
+                    var vid2_stEst = document.getElementById("state_estimation:cam2");
+                    var vid3_stEst = document.getElementById("state_estimation:cam3");
+                    
+                    var vid1_nav = document.getElementById("navigation:cam1");
+                    var vid2_nav = document.getElementById("navigation:cam2");
+                    
+                    // play all 3 together
+                    vid1_stEst.onplay = playStateEstimationVideos
+                    vid2_stEst.onplay = playStateEstimationVideos
+                    vid3_stEst.onplay = playStateEstimationVideos
+                    
+                    // pause all 3 together
+                    vid1_stEst.onpause = pauseStateEstimationVids
+                    vid2_stEst.onpause = pauseStateEstimationVids
+                    vid3_stEst.onpause = pauseStateEstimationVids
+                    
+                    // play all 2 together
+                    vid1_nav.onplay = playNavVideos
+                    vid2_nav.onplay = playNavVideos
+                    
+                    // pause all 2 together
+                    vid1_nav.onpause = pauseNavVids
+                    vid2_nav.onpause = pauseNavVids
+    
+ 
+                }
+                
+                // Pause all Videos for state estimation
+                function pauseStateEstimationVids(e)
+                {
+                    var vid1 = document.getElementById("state_estimation:cam1");
+                    var vid2 = document.getElementById("state_estimation:cam2");
+                    var vid3 = document.getElementById("state_estimation:cam3");
+                    
+                    vid1.pause();
+                    vid2.pause();
+                    vid3.pause();
+                }
+                
+                // Play all Videos for state estimation
+                function playStateEstimationVideos(e) 
+                {      
+                    var vid1 = document.getElementById("state_estimation:cam1");
+                    var vid2 = document.getElementById("state_estimation:cam2");
+                    var vid3 = document.getElementById("state_estimation:cam3");
+
+                    vid1.volume = 0.3;
+                    vid2.volume = 0.3;
+                    vid3.volume = 0.3;
+
+                    vid1.play();
+                    vid2.play();
+                    vid3.play();
+                   
+                }
+                
+                
+                // Pause all Videos for state estimation
+                function pauseNavVids(e)
+                {
+                    var vid1 = document.getElementById("navigation:cam1");
+                    var vid2 = document.getElementById("navigation:cam2");
+                    
+                    vid1.pause();
+                    vid2.pause();
+                   
+                }
+                
+                // Videos for Navigation.
+                function playNavVideos(e) 
+                {      
+                    var vid1 = document.getElementById("navigation:cam1");
+                    var vid2 = document.getElementById("navigation:cam2");
+                  
+                    vid1.volume = 0.3;
+                    vid2.volume = 0.3;
+                    
+                    vid1.play();
+                    vid2.play();
+                    
+                }
+                
+            </script>
 	</body>
 </html>
