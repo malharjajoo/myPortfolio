@@ -211,7 +211,7 @@
                                             
                                            
                                             <h3> Evaluation: Simple Navigation Test </h3>
-                                            <p>To confirm/validate the Estimation accuracy (a single camera is used for estimation in videos below), and the Feedback Controller is integrated into the system. The destination point is marked on the ground (as a cross mark with black tape) and its coordinates are found using a measuring tape. These coordinates are provided to the Feedback controller and the drone is made to navigate from start point to the destination.
+                                            <p>To confirm/validate the Estimation accuracy (a single camera is used for estimation in videos below), and the Feedback Controller is integrated into the system. The destination point is marked on the ground (as a cross mark with black tape) and its coordinates are found using a standard measuring tape. These coordinates are provided to the Feedback controller and the drone is made to navigate from start point to the destination.
                                             
                                             </p>
                                             
@@ -219,7 +219,7 @@
                                             
                                             
                                                 
-                                                Click on any one of the videos to start both simultaneously.
+                                                Click on any of the videos to start it.
                                                  
                                                  <br>
                                                  <br>
@@ -417,12 +417,12 @@
                     vid3_stEst.onpause = pauseStateEstimationVids
                     
                     // play all 2 together
-                    vid1_nav.onplay = playNavVideos
-                    vid2_nav.onplay = playNavVideos
+                    //vid1_nav.onplay = playNavVideos
+                    //vid2_nav.onplay = playNavVideos
                     
                     // pause all 2 together
-                    vid1_nav.onpause = pauseNavVids
-                    vid2_nav.onpause = pauseNavVids
+                    //vid1_nav.onpause = pauseNavVids
+                    //vid2_nav.onpause = pauseNavVids
     
  
                 }
@@ -481,6 +481,7 @@
                     vid2.play();
                     
                 }
+            
                 
             </script>
 	</body>
