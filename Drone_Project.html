@@ -69,16 +69,16 @@
 												<h2 class="major"><span>Useful Links</span></h2>
 												<ul>
 													
-                                                    <li> <a href="#"> Link to report</a>
+                                                    <li> <a href="https://github.com/malharjajoo/drone_tracking/blob/master/Documentation/Report/final_report_fyp.pdf"> Link to Master's thesis Report</a>
                                                     </li>
                                                     <br>
-                                                    <li>  <a href="#">Link to setup documentation </a>
+                                                    <li>  <a href="https://github.com/malharjajoo/drone_tracking/blob/master/Documentation/Report/Setup.pdf">Link to Setup Guide </a>
                                                     </li> 
                                                     <br>
                                                     <li>
 														<article class="box post-summary">
-															<h3><a href="https://github.com/malharjajoo/caches_assignment">Github code link</a></h3>
-															<a href="https://github.com/malharjajoo/caches_assignment" class="button alt">Code</a>
+															<h3><a href="https://github.com/malharjajoo/drone_tracking">Github code link</a></h3>
+															<a href="https://github.com/malharjajoo/drone_tracking" class="button alt">Code</a>
                                                             
 														</article>
 													</li>
@@ -211,7 +211,14 @@
                                             
                                            
                                             <h3> Evaluation: Simple Navigation Test </h3>
-                                            <p>To confirm/validate the Estimation accuracy (a single camera is used for estimation in videos below), and the Feedback Controller is integrated into the system. The destination point is marked on the ground (as a cross mark with black tape) and its coordinates are found using a standard measuring tape. These coordinates are provided to the Feedback controller and the drone is made to navigate from start point to the destination.
+                                            <p>To confirm/validate the Estimation accuracy (a single camera is used for estimation in videos below), and the Feedback Controller is integrated into the system. The destination point is marked on the ground (as a cross mark with black tape) and its coordinates are found using a standard measuring tape. These coordinates are provided to the Feedback controller and the drone is made to navigate from the starting point to the destination point.
+                                            
+                                            </p>
+                                            
+                                            <p>
+                                                     
+                                            Since wireless cameras are used in this project, they incur a latency which affects the Navigation module. Consider the example scenario shown in video (on) the left): the PID controller is provided with a desired 3D point/coordinate and the drone must be landed there on reaching near it. When the complete system is run, it is only after the drone moves past the desired point the camera(s) infer the drone to be at/above the landing point and the PID controller commands it to land incorrectly.
+                                            This latency is known as <strong>end-to-end latency</strong> and is unavoidable and may only be fixed by either reducing the wireless latency or making the drone hover (instead of land) at the desired location in order to give the cameras some time to catch up to the existing position of the drone.
                                             
                                             </p>
                                             
